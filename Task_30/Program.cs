@@ -2,29 +2,22 @@
 // заполненный нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 
-int[] array = new int[8];
-FillArray(array);
-PrintArray(array);
-
-
-void FillArray(int[] arr)
+int[] CreateArray(int size)
 {
-    int length = arr.Length;
-    int index = 0;
-    while(index < length)
+    int[] arr = new int[size];
+    int i = 0;
+    while(i < size)
     {
-        arr[index] = new Random().Next(0,2);
-        index ++;
+        arr[i] = new Random().Next(0,2);
+        i++;
     }
+    return arr;
 }
 
 void PrintArray(int[] arr)
 {
-    int length = arr.Length;
-    int index = 0;
-    while(index < length)
-    {
-        Console.Write($"{arr[index]} ");
-        index++;
-    }
+        Console.WriteLine($"[{string.Join (", ", arr)}]");
 }
+
+
+PrintArray(CreateArray(8));
